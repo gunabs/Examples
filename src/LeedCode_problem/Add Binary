@@ -1,0 +1,38 @@
+ public String addBinary(String a, String b) {
+
+
+
+		char[] aArr = a.toCharArray();
+        char[]  bArr= b.toCharArray();
+        
+       // Initialize a StringBuilder for the result
+        StringBuilder result = new StringBuilder();
+        
+        // Initialize pointers for both strings and carry
+        int i = aArr.length - 1;
+        int j = bArr.length - 1;
+        int carry = 0;
+        
+        // Process both strings from end to start
+        while (i >= 0 || j >= 0 || carry != 0) {
+            // Get the value of the current bit for both strings
+            int bitA = i >= 0 ? aArr[i] - '0' : 0;
+            System.out.println(bitA);
+            int bitB = j >= 0 ? bArr[j] - '0' : 0;
+            
+            // Calculate the sum of the current bits and the carry
+            int sum = bitA + bitB + carry;
+            
+            // Determine the new carry and result bit
+            carry = sum / 2;
+            result.append(sum % 2);
+            
+            // Move to the next bit
+            i--;
+            j--;
+        }
+		
+        
+        return result.reverse().toString();
+        
+    }
