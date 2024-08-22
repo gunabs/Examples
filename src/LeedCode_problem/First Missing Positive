@@ -1,0 +1,27 @@
+ public int firstMissingPositive(int[] nums) {
+        
+        Arrays.sort(nums);
+       
+         int  no=1;
+	       
+	       
+	            
+	           for(int j=0;j<nums.length;j++)
+	            	{
+	                if(no==nums[j])
+	                {
+	                    no++;
+	                   
+	                }
+                     else if(nums[j]>=no)   
+                     {
+                         break;
+                     }
+                        
+	            }
+	            
+	            System.out.println(no);
+		return no;
+       
+        
+    }
