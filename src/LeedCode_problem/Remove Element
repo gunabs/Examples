@@ -1,0 +1,21 @@
+ public int removeElement(int[] nums, int val) {
+        
+        int count=0; 
+        int temp=0;
+           
+		for(int i=0;i<nums.length;i++)
+		{
+        
+			if(val!=nums[i])
+			{
+				nums[count]=nums[i];
+				count=count+1;
+            }
+            else if(val==nums[i])
+            {
+                temp=temp+1;
+                }
+		}
+        
+     return count;
+}
